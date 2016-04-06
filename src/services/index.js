@@ -5,13 +5,6 @@ const authentication = require('./authentication');
 const user = require('./user');
 const moment = require('moment');
 const mongoose = require('mongoose');
-const Slack = require('@slack/client');
-const RtmClient = Slack.RtmClient;
-const WebClient = Slack.WebClient;
-const MemoryDataStore = Slack.MemoryDataStore;
-const RTM_CLIENT_EVENTS = Slack.CLIENT_EVENTS.RTM;
-const RTM_EVENTS = Slack.RTM_EVENTS;
-
 
 module.exports = function() {
   const app = this;
