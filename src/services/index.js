@@ -43,6 +43,11 @@ module.exports = function() {
     `)
   });
 
+  // Listen for !jorbs
+  bot.listen(/^!jorbs$/i, (msg, args) => {
+    bot.send(msg.user, `https://45.media.tumblr.com/tumblr_m5n01lr7ye1r5ahe6o1_400.gif`)
+  });
+
   // Listen for !jobs add
   bot.listen(/^!jobs add$/i, (msg, args) => {
     bot.send(msg.user, `
