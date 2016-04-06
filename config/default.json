@@ -1,0 +1,18 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "mongodb": "mongodb://localhost:27017/jobs",
+  "public": "../public/",
+  "slack": {
+    "token": "SLACK_API_TOKEN",
+    "autoReconnect": true,
+    "autoMark": true
+  },
+  "auth": {
+    "idField": "_id",
+    "token": {
+      "secret": "aCzmyQy7vA0pmwPqUGvnVhblP7Z+P/0eTRTnVwQXPtkAEE9QHxXCtHkw5YzGJDZPV3OgW7Jm9vEID6PSkdDY7w=="
+    },
+    "local": {}
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "host": "HOST",
+  "port": "PORT",
+  "mongodb": "MONGOLAB_URI",
+  "public": "../public/",
+  "slack": {
+    "token": "SLACK_API_TOKEN",
+    "autoReconnect": true,
+    "autoMark": true
+  },
+  "auth": {
+    "idField": "_id",
+    "token": {
+      "secret": "AUTH_SECRET"
+    },
+    "local": {}
+  }
+}
