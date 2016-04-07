@@ -57,6 +57,10 @@ class Bot {
       this.rtmClient.sendMessage(msg, channelId);
     });
   }
+
+  post(channelId, msg) {
+    this.rtmClient.sendMessage(msg, channelId);
+  }
 }
 
 

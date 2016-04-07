@@ -136,7 +136,7 @@ module.exports = function() {
 
       `;
 
-    bot.send(msg.user, text);
+    bot.post('C04R7K3JV', text);
   });
 
   jobs.on('patched', msg => {
@@ -149,6 +149,6 @@ module.exports = function() {
         ___________________________
         Learn more: ${message.link}
       `;
-    bot.send(msg.user, text);
+    bot.post('C04R7K3JV', text);
   });
 };
