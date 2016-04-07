@@ -124,30 +124,32 @@ module.exports = function() {
   });
 
 
-  jobs.on('created', msg => {
+  jobs.on('created', job => {
     let text = `
-      :awesome: *New Job added by ${message.addedBy}*
+      :awesome: *New Job added by ${job.addedBy}*
 
-        *_${message.title}_*:
-        > ${message.description}
+        *_${job.title}_*:
+        > ${job.description}
 
         ___________________________
-        Learn more: ${message.link}
+        Learn more: ${job.link}
+        Visit https://nashdev-jobs.herokuapp.com/jobs/${job._id} for the full listing.
 
       `;
 
     bot.post('C04R7K3JV', text);
   });
 
-  jobs.on('patched', msg => {
+  jobs.on('patched', job => {
     let text = `
-      :awesome: *Job updated by ${message.addedBy}*
+      :awesome: *Job updated by ${job.addedBy}*
 
-        *_${message.title}_*:
-        > ${message.description}
+        *_${job.title}_*:
+        > ${job.description}
 
         ___________________________
-        Learn more: ${message.link}
+        Learn more: ${job.link}
+        Visit https://nashdev-jobs.herokuapp.com/jobs/${job._id} for the full listing.
       `;
     bot.post('C04R7K3JV', text);
   });
