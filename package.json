@@ -40,7 +40,6 @@
     "transpile": "babel front --watch --out-dir ./build",
     "transpile-once": "babel front --out-dir ./build",
     "js-once": "browserify -e build/app.js -v -d  | exorcist public/app.js.map > public/app.js",
-    "postinstall": "npm-run-all transpile-once js-once css",
     "start:front": "npm-run-all --parallel transpile watch:js watch:styles"
   },
   "dependencies": {
