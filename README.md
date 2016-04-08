@@ -2,6 +2,15 @@
 
 > nashdev slack jobs api
 
+# Todo:
+- Complete User Registration
+- Add contact information to job posts (:horse: this might be important)
+- Add more meta information to job posts
+  - Remote
+  - Salary
+  - Location
+  - Company
+  - Is Recruiter? 
 
 ## Getting Started
 
