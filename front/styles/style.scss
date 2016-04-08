@@ -1,4 +1,5 @@
 body {
+  font-family: Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 25px;
 }
@@ -6,12 +7,21 @@ body {
 
 .job-create {
   form {
+    max-width: 800px;
+    margin: 0 auto;
     input, textarea {
       width: 100%;
-      padding: 10px;
+      padding: 20px;
       margin: 5px;
-      border: 1px solid #ccc;
+      border: 2px solid #E8E7E7;
       // outline: none;
     }
   }
+}
+
+
+.job-list {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 14px;
 }
