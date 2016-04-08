@@ -15,11 +15,33 @@
   "engines": {
     "node": ">= 0.12.0"
   },
+  "browserify": {
+    "transforms": [
+      "envify"
+    ]
+  },
+  "babel": {
+    "plugins": [],
+    "presets": [
+      "es2015",
+      "stage-0",
+      "react"
+    ],
+    "ignore": "node_modules"
+  },
   "scripts": {
     "test": "npm run jshint && npm run mocha",
-    "jshint": "jshint src/. test/. --config",
-    "start": "node src/",
-    "mocha": "mocha test/ --recursive"
+    "jshint": "jshint back/. test/. --config",
+    "start": "node back/",
+    "mocha": "mocha test/ --recursive",
+    "css": "node-sass front/styles/style.scss | postcss --use autoprefixer --autoprefixer.browsers '> 50%' --use csswring -o ./public/style.css",
+    "watch:styles": "sane 'npm-run-all css' --glob='front/styles/**/*.scss' --glob='front/styles/**/*.css'",
+    "watch:js": "watchify -e build/app.js -v -d --delay 16 -o 'exorcist public/app.js.map > public/app.js'",
+    "transpile": "babel front --watch --out-dir ./build",
+    "transpile-once": "babel front --out-dir ./build",
+    "js-once": "browserify -e build/app.js -v -d  | exorcist public/app.js.map > public/app.js",
+    "postinstall": "npm-run-all transpile-once js-once css",
+    "start:front": "npm-run-all --parallel transpile watch:js watch:styles"
   },
   "dependencies": {
     "@slack/client": "^2.3.0",
@@ -41,8 +63,30 @@
     "winston": "^2.2.0"
   },
   "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "babel-cli": "^6.5.1",
+    "babel-core": "^6.5.2",
+    "babel-polyfill": "^6.5.0",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "csswring": "^4.2.2",
+    "exorcist": "^0.4.0",
+    "feathers-client": "^1.1.0",
     "jshint": "^2.9.1",
     "mocha": "^2.4.5",
-    "request": "^2.70.0"
+    "node-sass": "^3.4.2",
+    "npm-run-all": "^1.7.0",
+    "postcss-cli": "^2.5.1",
+    "react": "^0.14.8",
+    "react-dom": "^0.14.8",
+    "react-redux": "^4.4.1",
+    "redux": "^3.3.1",
+    "redux-logger": "^2.6.1",
+    "redux-thunk": "^2.0.1",
+    "request": "^2.70.0",
+    "sane": "^1.3.4",
+    "socket.io-client": "^1.4.5",
+    "watchify": "^3.7.0"
   }
 }

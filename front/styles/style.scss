@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 25px;
+}
+
+
+.job-create {
+  form {
+    input, textarea {
+      width: 100%;
+      padding: 25px;
+      margin: 5px;
+      border: 1px solid #ccc;
+      // outline: none;
+    }
+  }
+}
