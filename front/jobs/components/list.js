@@ -4,7 +4,9 @@ import JobItem from './list-item';
 const Jobs = ({jobs}) => {
   return (
     <div className="job-list">
-      {jobs.map((job, i) => <JobItem job={job} key={i} />)}
+      <div className="job-list-wrapper">
+	      {jobs.map((job, i) => <JobItem job={job} key={i} />)}
+      </div>
     </div>
   )
 };
