@@ -61,6 +61,7 @@ module.exports = function() {
         {
           "title": "Post Title",
           "description": "Long-form Description",
+          "company": "Company name",
           "addedBy": "your slack username",
           "link": "http://domain.com/path/to/apply"
         }
@@ -69,6 +70,7 @@ module.exports = function() {
       curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d '{
         "title": "test job 2",
         "description": "description",
+        "company": "Company X",
         "addedBy": "wgolden",
         "link": "http://google.com"
       }' "https://nashdev-jobs.herokuapp.com/jobs"
@@ -88,7 +90,7 @@ module.exports = function() {
       let total = res.total;
 
       let listings = res.data.map(job => `
-        - *${job.title}* posted by @${job.addedBy} on ${moment(job.createdAt).fromNow()}. Type: \`!jobs view ${job._id}\` for more details.`).join('');
+        - *${job.title} at ${job.company}* posted by @${job.addedBy} on ${moment(job.createdAt).fromNow()}. Type: \`!jobs view ${job._id}\` for more details.`).join('');
 
       bot.send(msg.user, `
         *:awesome: NashDev Jobs!*
@@ -128,7 +130,7 @@ module.exports = function() {
     let text = `
       :awesome: *New Job added by ${job.addedBy}*
 
-        *_${job.title}_*:
+        *_${job.title}_* at ${job.company}:
         > ${job.description}
 
         ___________________________
@@ -144,7 +146,7 @@ module.exports = function() {
     let text = `
       :awesome: *Job updated by ${job.addedBy}*
 
-        *_${job.title}_*:
+        *_${job.title}_* at ${job.company}:
         > ${job.description}
 
         ___________________________

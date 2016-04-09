@@ -7,6 +7,7 @@ class JobCreate extends React.Component {
         <form method="POST" action="/jobs" ref="form">
           <input type="text" placeholder="title" ref="title"/>
           <textarea placeholder="description" ref="description"/>
+          <input type="text" placeholder="company" ref="company"/>
           <input type="text" placeholder="added by" ref="addedBy"/>
           <input type="text" placeholder="link" ref="link"/>
 
@@ -15,6 +16,7 @@ class JobCreate extends React.Component {
                   this.props.onSubmit({
                     title: this.refs.title.value,
                     description: this.refs.description.value,
+                    company: this.refs.company.value,
                     addedBy: this.refs.addedBy.value,
                     link: this.refs.link.value
                   });
