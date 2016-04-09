@@ -4,7 +4,7 @@ class JobCreate extends React.Component {
   render () {
     return (
       <div className="job-create">
-        <h1>NashJobs</h1>
+        <h1>NashDev Jobs</h1>
         <form method="POST" action="/jobs" ref="form">
           <input type="text" placeholder="title" ref="title"/>
           <textarea placeholder="description" ref="description"/>
